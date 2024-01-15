@@ -5,6 +5,10 @@
   /* font-family: "Open Sans", sans-serif; */
   font-family: "Work Sans", sans-serif;
 }
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+}
 .btn-primary {
   border-radius: 8px;
   background: #ff900e;
@@ -16,10 +20,13 @@
   font-weight: 600;
   border: 0;
   cursor: pointer;
+  margin: 20px 0;
 }
 p {
   font-size: 1rem;
 }
+/* Shared styles End */
+
 /* Header styles */
 header {
   background: rgba(255, 144, 14, 0.1);
@@ -63,60 +70,171 @@ nav li a {
 .banner-description {
   color: #727272;
 }
-.banner img{
-    width: 100%;
-    margin-top: 1.5rem;
+.banner img {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 1.5rem;
 }
 /* Team part styles */
-main{
-  max-width: 1440px;
-  margin: 0 auto;
-}
-.team-container{
+.team-container {
   display: flex;
+  justify-content: space-between;
+  padding: 50px 200px;
   align-items: center;
 }
-.team-image-container{
+.team-image-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
-.team-text-content{
-  padding-left: 70px;
-  padding-right: 70px;
+.team-image-container img {
+  /* width: 100%; */
+  max-width: 100%;
 }
-.team-text-content h3{
+.team-text-content {
+  width: 60%;
+  padding-left: 40px;
+  padding-right: 10px;
+}
+.team-text-content h3 {
   font-size: 2.8rem;
 }
-.team-text-content span:nth-of-type(1){
+.team-text-content span:nth-of-type(1) {
   color: #727272;
   font-weight: 500;
 }
-.team-text-content span:nth-of-type(2){
+.team-text-content span:nth-of-type(2) {
   color: #131313;
   font-weight: 700;
 }
-.team-text-content span:nth-of-type(3){
-  color: #FF900E;
+.team-text-content span:nth-of-type(3) {
+  color: #ff900e;
   font-weight: 700;
+}
+/* Feature Styles */
+.feature-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 100px;
+  gap: 8%;
+}
+.feature-text {
+  width: 45%;
+}
+.feature-image {
+  width: 45%;
+  margin-top: 50px;
+  min-width: 600px;
+}
+.right-image img {
+  width: 100%;
+}
+.feature-text h3 {
+  color: var(--Dark-01, #131313);
+  font-size: 45px;
+  font-weight: 700;
+  border-left: 5px solid #ff900e;
+  padding-left: 20px;
+}
+.feature-text p {
+  color: var(--Dark-03, #727272);
+  font-family: Work Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px; /* 162.5% */
+}
+.card {
+  margin-bottom: 12px;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.06);
+}
+.feature-image .overlay {
+  position: relative;
+  top: -100px;
+  left: -60px;
+  border-radius: 8px;
+  background: #ff900e;
+  padding: 25px 28px;
+  display: inline-block;
+  max-width: 340px;
+  max-height: 200px;
+}
+.feature-image .overlay h4 {
+  color: #fff;
+  text-align: center;
+  font-size: 45px;
+  font-weight: 700;
+  display: inline;
+  line-height: 45px;
+}
+.feature-image .overlay p {
+  color: #fff;
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: 500;
+  text-align: center;
 }
 /* Responsive meadia query */
 /* mobile devices */
 @media screen and (max-width: 576px) {
-    header{
-        padding: 20px;
-    }
-    nav{
-        flex-direction: column;
-    }
+  header {
+    padding: 20px;
+  }
+  nav, .feature-container {
+    flex-direction: column;
+  }
+  .team-container {
+    padding: 20px 10px;
+  }
+  .team-image-container {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+    /* padding-left: 20px; */
+  }
+  .team-container {
+    /* align-items: end; */
+    flex-wrap: wrap;
+  }
+  .team-text-content {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 55%;
+  }
+  .feature-container{
+    padding: 20px;
+  }
+  .feature-text{
+    width: 90%;
+  }
+  .feature-image{
+    width: 90%;
+  }
+  .feature-image img{
+    max-width: 380px;
+  }
+  .feature-image .overlay{
+   display: none;
+  }
 }
 /* Tablet or medium devices */
 
 @media screen and (min-width: 576px) and (max-width: 960px) {
-  header{
-      padding: 50px;
+  header {
+    padding: 50px;
   }
-  nav{
+  nav {
     flex-direction: column;
+  }
+  .team-image-container {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+    padding-left: 20px;
+  }
+  .team-container {
+    align-items: end;
+    flex-wrap: wrap;
   }
 }
